@@ -143,6 +143,7 @@ jobs:
         if: needs.lint-chart.outputs.changed == 'true'
         with:
           node_image: kindest/node:${{ matrix.k8s }}
+          config: .github/kind-config.yml
 
       - name: Run chart-testing (install)
         run: |
